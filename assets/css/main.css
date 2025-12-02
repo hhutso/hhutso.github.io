@@ -2271,3 +2271,33 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+/* -----------------------------
+   iPhone Mockup Styles
+------------------------------ */
+
+.iphone-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.iphone-frame {
+  width: 350px;
+  height: 720px;
+  background: #000;
+  border-radius: 40px;
+  padding: 25px 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.iphone-frame video {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+}
