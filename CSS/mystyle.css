@@ -150,9 +150,9 @@ header{
     margin: 40px auto;
     padding: 40px 30px;
 
-    background-color: #fff5f9;      /* same light blush */
-    border-radius: 12px;            /* rounded corners */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);  /* soft shadow */
+    background-color: #fff5f9; 
+    border-radius: 12px;            
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06); 
 }
 
 .project-details h2{
