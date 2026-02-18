@@ -1,9 +1,16 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffe6f0;
+    color: #2e2e2e;
+}
+
 .navbar{
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    background-color: #333;
+    background-color: #c94f7c;
 }
 
 .navbar li {
@@ -19,11 +26,12 @@
 }
 
 .navbar a:hover{
-    background-color: #575;
+    background-color: #ffe6f0;
+    color: #c94f7c;
 }
 
 footer {
-    background-color: #222;
+    background-color: #c94f7c;
     color: white;
     padding: 30px 20px;
 }
@@ -50,7 +58,7 @@ footer {
 }
 
 .footer-section a:hover{
-    color: #575;
+    color: #ffe6f0;
 }
 
 .copyright{
@@ -64,7 +72,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #c94f7c;
     padding: 10px 20px
 }
 
@@ -83,6 +91,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: center;
     gap: 40px;
     max-width: 1000px;
     margin: auto;
@@ -111,18 +120,19 @@ header{
     max-width: 400px;
     width: 100%;
     border-radius: 8px;
+    text-align: center;
 }
 
 .project-head{
     text-align: center;
     padding: 60px 20px;
-    background-color: #f4f4f4;
+    background-color: #fff5f9;
 }
 
-.project-subtitle{
-    font-size: 18px;
-    color:#555
+.project-head a{
+    color: #c94f7c;
 }
+
 
 .project-media{
     text-align: center;
@@ -135,10 +145,14 @@ header{
     border-radius: 8px;
 }
 
-.project-details{
+.project-details {
     max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
+    margin: 40px auto;
+    padding: 40px 30px;
+
+    background-color: #fff5f9;      /* same light blush */
+    border-radius: 12px;            /* rounded corners */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);  /* soft shadow */
 }
 
 .project-details h2{
@@ -148,7 +162,11 @@ header{
 .contact-head{
     text-align: center;
     padding: 60px 20px;
-    background-color: #f4f4f4;
+    background-color: #fff5f9;
+}
+
+.contact-head a{
+    color: #c94f7c;
 }
 
 .contact-container{
@@ -161,16 +179,20 @@ header{
     flex-wrap: wrap;
 }
 
-.contact-info{
-    flex: 1;
-    min-width: 250px;
-}
-
 .project-media video {
     width: 100%;
     max-width: 300px;
     height: auto;
     border-radius: 8px;
+}
+
+.about-section,
+.project-head,
+.contact-head {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 1100px;
 }
 
 @media (max-width: 768px) {
