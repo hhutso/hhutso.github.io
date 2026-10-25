@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hailey Hudson | HCI Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name: I build interactive systems and study how people use them.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your Name | HCI Portfolio">
+  <meta property="og:description" content="I build interactive systems and study how people use them.">
+  <!-- TODO: add a preview image (1200x630) at assets/images/og.png, then set og:image to its full URL -->
+  <!-- <meta property="og:image" content="https://USERNAME.github.io/REPO/assets/images/og.png"> -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script src="js/main.js"></script>
+  <!-- Third-party script from ascii-magic.com for the background. If that site is down, the page still works, just without the background. -->
+  <script type="module" src="https://www.ascii-magic.com/ascii/ascii.js"></script>
+</head>
+<body class="home">
+  <!-- Decoration only, so it is hidden from screen readers. js/main.js puts an <ascii-art piece="moonlit-sea"> element in here. -->
+  <div class="scene" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="index.html">Hailey Hudson</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="interests.html">Interests</a></li>
+        </ul>
+      </nav>
+      <button class="wave-toggle" type="button" aria-pressed="false">Pause animation</button>
+      <button class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap">
+      <div>
+        <h1>Hailey Hudson</h1>
+        <p class="statement">I build interactive systems and <em>study how people use them.</em></p>
+        <p class="label">Currently: Applying to SWE internships for Summer 2027, Applying to HCI programs for Fall 2027</p>
+        <div class="actions">
+          <a class="btn" href="work.html">View work</a>
+          <a class="btn btn--dashed" href="resume.html">Read Resume</a>
+        </div>
+      </div>
+       <img src="assets/images/me-web.jpg" alt="thats me">
+    </section>
+
+    <section id="work" class="wrap" aria-labelledby="work-title">
+      <h2 id="work-title">Featured projects</h2>
+      <ul class="cards">
+        <li>
+          <a class="card" href="case-studies/storyweave.html">
+            <span class="label">2026</span>
+            <h3>StoryWeave</h3>
+            <p>Building a privacy-conscious read-aloud app to study how real-time, line-by-line feedback helps early readers build phonics mastery.</p>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="case-studies/wateroptix.html">
+            <span class="label">2026</span>
+            <h3>WaterOptix</h3>
+            <p>Turning peer-reviewed hydro-economic research into a full-stack decision-support tool that helps Rio Grande farmers choose their lowest-cost response to water shortage.</p>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="case-studies/voicereminders.html">
+            <span class="label">2025</span>
+            <h3>Voice Reminders</h3>
+            <p>Exploring how voice interaction can reduce friction in everyday task capture, through a cross-platform mobile reminder app built with React Native.</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Stays hidden until js/main.js has loaded the data, so a failed fetch leaves no empty section -->
+    <section id="contrib" class="wrap" aria-labelledby="contrib-title" hidden>
+      <h2 id="contrib-title">GitHub activity</h2>
+      <div class="contrib" aria-hidden="true"></div>
+      <p></p>
+    </section>
+
+    <section class="wrap" aria-labelledby="research-title">
+      <h2 id="research-title">Research</h2>
+      <p>Explore my research interests and the experience I’ve gained studying and building human-centered technology.</p>
+      <a class="btn btn--dashed" href="research.html">Read research</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav aria-labelledby="f-sections">
+          <h2 id="f-sections">Sections</h2>
+          <ul>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="interests.html">Interests</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-projects">
+          <h2 id="f-projects">Projects</h2>
+          <ul>
+            <li><a href="case-studies/storyweave.html">StoryWeave</a></li>
+            <li><a href="case-studies/wateroptix.html">WaterOptix</a></li>
+            <li><a href="case-studies/voicereminders.html">Voice Reminders</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-connect">
+          <h2 id="f-connect">Connect</h2>
+          <ul>
+            <li><a href="https://github.com/hhutso" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/hailey-hudson2025" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:haileyhudsonn@hotmail.com">Email</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-base">
+        <p class="label">Currently: New Mexico</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ThoughtBubble | Hailey Hudson</title>
+  <meta name="description" content="A JavaFX desktop app that helps families share how they are feeling and how open they are to talking.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ThoughtBubble | Hailey Hudson">
+  <meta property="og:description" content="A JavaFX desktop app that helps families share how they are feeling and how open they are to talking.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/main.js"></script>
+  <script type="module" src="https://www.ascii-magic.com/ascii/ascii.js"></script>
+</head>
+<body>
+  <div class="scene" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="../index.html">Hailey Hudson</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../research.html">Research</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../resume.html">Resume</a></li>
+          <li><a href="../interests.html">Interests</a></li>
+        </ul>
+      </nav>
+      <button class="wave-toggle" type="button" aria-pressed="false">Pause animation</button>
+      <button class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+    </div>
+  </header>
+
+  <div class="wrap case">
+    <nav class="case-nav" aria-label="Case study sections">
+      <ol>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#technical">Tech stack</a></li>
+      </ol>
+    </nav>
+
+    <main id="main">
+      <div class="page-head">
+        <p class="label">1st Software Development Project / Spring 2025</p>
+        <h1>ThoughtBubble</h1>
+      </div>
+
+      <section id="overview">
+        <h2>Overview</h2>
+        <dl class="overview">
+          <dt>Problem</dt>
+          <dd>Families can grow apart through distance or different communication styles, and devices are rarely used to bring them closer.</dd>
+          <dt>Who it affects</dt>
+          <dd>Family members who want to stay connected but find it hard to know when someone is ready to talk.</dd>
+          <dt>My role</dt>
+          <dd>Backend Developer (Data Layer)</dd>
+          <dt>Team</dt>
+          <dd>Jarhec Arreola (Fullstack Developer), Logan Bales (Backend Developer), Allison Barricklow (Frontend Developer), Hailey Hudson (Backend Developer), Kaden Martinez (Integration)</dd>
+          <dt>Timeline</dt>
+          <dd>Jan to May 2025.</dd>
+        </dl>
+      </section>
+
+      <section id="demo">
+        <h2>Demo</h2>
+        <img class="poster" src="../assets/images/tb.png" alt="TODO: describe the ThoughtBubble screenshot" width="1125" height="670" loading="lazy">
+      </section>
+
+      <section id="architecture">
+        <h2>Architecture</h2>
+        <h3>What it does</h3>
+        <p>ThoughtBubble aims to turn screen time into family time. Each person can show how they are feeling and set a status for how open they are to talking, so the rest of the family knows when it is a good moment to reach out.</p>
+        <h3>Code layout</h3>
+        <p>It is a JavaFX desktop app built with Maven. The Java code lives under <code>com.tb</code>, and the screens are FXML view files in the resources folder. Data is kept in three CSV files: users, events and mood tracking.</p>
+        <h3>Key decisions and why</h3>
+        <p>The screens are described in FXML, separate from the Java code, so the layout can change without touching the logic. Plain CSV files keep the app self-contained, with no database to install.</p>
+      </section>
+
+      <section id="technical" class="tech">
+        <h2>Tech stack</h2>
+        <ul>
+          <li>Language: Java</li>
+          <li>Interface: JavaFX 23 with FXML views</li>
+          <li>Build: Maven</li>
+          <li>Data: CSV files</li>
+        </ul>
+        <p><a href="https://github.com/jay-a8/ThoughtBubble" target="_blank">View the code on GitHub</a></p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav aria-labelledby="f-sections">
+          <h2 id="f-sections">Sections</h2>
+          <ul>
+            <li><a href="../work.html">Work</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../resume.html">Resume</a></li>
+            <li><a href="../interests.html">Interests</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-projects">
+          <h2 id="f-projects">Projects</h2>
+          <ul>
+            <li><a href="storyweave.html">StoryWeave</a></li>
+            <li><a href="wateroptix.html">WaterOptix</a></li>
+            <li><a href="voicereminders.html">Voice Reminders</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-connect">
+          <h2 id="f-connect">Connect</h2>
+          <ul>
+            <li><a href="https://github.com/hhutso" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/hailey-hudson2025" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:haileyhudsonn@hotmail.com">Email</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-base">
+        <p class="label">Currently: New Mexico</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StoryWeave | Hailey Hudson</title>
+  <meta name="description" content="A reading-practice app for grades 1 to 3 that scores each word a child reads aloud and writes the next story from their phonics progress.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="StoryWeave | Hailey Hudson">
+  <meta property="og:description" content="A reading-practice app for grades 1 to 3 that scores each word a child reads aloud and writes the next story from their phonics progress.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/main.js"></script>
+  <script type="module" src="https://www.ascii-magic.com/ascii/ascii.js"></script>
+</head>
+<body>
+  <div class="scene" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="../index.html">Hailey Hudson</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../research.html">Research</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../resume.html">Resume</a></li>
+          <li><a href="../interests.html">Interests</a></li>
+        </ul>
+      </nav>
+      <button class="wave-toggle" type="button" aria-pressed="false">Pause animation</button>
+      <button class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+    </div>
+  </header>
+
+  <div class="wrap case">
+    <nav class="case-nav" aria-label="Case study sections">
+      <ol>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#quality">Quality</a></li>
+        <li><a href="#status">Status</a></li>
+        <li><a href="#technical">Tech stack</a></li>
+      </ol>
+    </nav>
+
+    <main id="main">
+      <div class="page-head">
+        <p class="label">Capstone Project / Fall 2026</p>
+        <h1>StoryWeave</h1>
+      </div>
+
+      <section id="overview">
+        <h2>Overview</h2>
+        <dl class="overview">
+          <dt>Problem</dt>
+          <dd>Young children need reading practice at the right level, but most stories are not matched to the phonics patterns a child has already mastered.</dd>
+          <dt>Who it affects</dt>
+          <dd>Children in grades 1 to 3, and the parents and caregivers who guide their practice.</dd>
+          <dt>My role</dt>
+          <dd>Fullstack developer, mainly the child and parent interfaces.</dd>
+          <dt>Team</dt>
+          <dd>Hailey Hudson (Fullstack Developer),  Shokhina Jalilova (Generation and Scoring Developer), Michael Viera (ASR Pipeline Developer)</dd>
+          <dt>Timeline</dt>
+          <dd>Aug to Dec 2026.</dd>
+        </dl>
+      </section>
+
+      <section id="demo">
+        <h2>Demo</h2>
+        <!-- TODO: save the recording as assets/storyweave-demo.mp4, then swap this paragraph for:
+        <video controls preload="metadata" width="100%">
+          <source src="../assets/storyweave-demo.mp4" type="video/mp4">
+        </video>
+        -->
+        <p>Demo video coming soon.</p>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+        <h3>Interviews</h3>
+        <p>Two 1st graders, 30 minutes each, about how they interact with demo interface.</p>
+        <h3>App Store Scraping</h3>
+        <p>2574 reviews scraped. Most complaints consisted of repetitive story content and age-inapprorpiate content.</p>
+      </section>
+
+      <section id="architecture">
+        <h2>Architecture</h2>
+        <h3>The learning loop</h3>
+        <p>A child reads a story aloud one line at a time. Azure Speech scores each word as mastered, shaky or missed, and the browser shows the result in color. Mastery is saved per phonics pattern. The difficulty engine then picks the patterns for the next story: ones the child has mastered plus two new ones. Claude writes the story from those patterns.</p>
+        <h3>Code layout</h3>
+        <p>The backend is split into routes (HTTP endpoints), services (scoring, difficulty and story generation) and models (13 database tables). The React frontend has separate child, parent and API modules. I worked mostly on the child and parent modules.</p>
+        <h3>Key decisions and why</h3>
+        <p>Stories are generated from an approved list of 316 words, so they stay readable at this level. If generation fails three times, the child gets a pre-written story instead of an error. Audio is processed per line and never stored, to limit what we keep about children.</p>
+      </section>
+
+      <section id="quality">
+        <h2>Quality</h2>
+        <h3>Checks</h3>
+        <p>The backend is tested with pytest and linted with ruff. Database changes go through Alembic migrations so everyone's schema stays in sync.</p>
+        <h3>Team workflow</h3>
+        <p>The team shares one hosted PostgreSQL database, so we check with each other before running scripts or migrations against it. Vocabulary and demo data are loaded by seed scripts, so a fresh setup can be rebuilt.</p>
+      </section>
+
+      <section id="status">
+        <h2>Status and next steps</h2>
+        <p>StoryWeave works end to end, but it is not ready for real children's data. Login and PINs are placeholders, there is no consent flow or retention policy yet, and the parent dashboard uses placeholder data.</p>
+        <h3>Known limitation</h3>
+        <p>Claude often uses words outside the approved list, so most children currently get a pre-written story. Fixing this is the first task of the next sprint.</p>
+        <h3>Next</h3>
+        <p>Replace the placeholder login with real authentication, then connect the parent dashboard to real data.</p>
+      </section>
+
+      <section id="technical" class="tech">
+        <h2>Tech stack</h2>
+        <ul>
+          <li>Backend: Python 3.12, uvicorn, managed with uv</li>
+          <li>Frontend: React, Node.js 22</li>
+          <li>Database: PostgreSQL (Docker locally, Neon shared), Alembic migrations</li>
+          <li>Services: Claude Haiku 4.5 for stories, Azure Speech for scoring, FFmpeg for audio</li>
+        </ul>
+        <p><a href="https://github.com/Mikecoal23/Story-Weave" target="_blank">View the code on GitHub</a></p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav aria-labelledby="f-sections">
+          <h2 id="f-sections">Sections</h2>
+          <ul>
+            <li><a href="../work.html">Work</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../resume.html">Resume</a></li>
+            <li><a href="../interests.html">Interests</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-projects">
+          <h2 id="f-projects">Projects</h2>
+          <ul>
+            <li><a href="storyweave.html">StoryWeave</a></li>
+            <li><a href="wateroptix.html">WaterOptix</a></li>
+            <li><a href="voicereminders.html">Voice Reminders</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-connect">
+          <h2 id="f-connect">Connect</h2>
+          <ul>
+            <li><a href="https://github.com/hhutso" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/hailey-hudson2025" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:haileyhudsonn@hotmail.com">Email</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-base">
+        <p class="label">Currently: New Mexico</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

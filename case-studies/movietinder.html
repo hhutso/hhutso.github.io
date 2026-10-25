@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movie Tinder | Hailey Hudson</title>
+  <meta name="description" content="A swipe-style movie app that learns from the movies you like and recommends more.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Movie Tinder | Hailey Hudson">
+  <meta property="og:description" content="A swipe-style movie app that learns from the movies you like and recommends more.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/main.js"></script>
+  <script type="module" src="https://www.ascii-magic.com/ascii/ascii.js"></script>
+</head>
+<body>
+  <div class="scene" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="../index.html">Hailey Hudson</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../research.html">Research</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../resume.html">Resume</a></li>
+          <li><a href="../interests.html">Interests</a></li>
+        </ul>
+      </nav>
+      <button class="wave-toggle" type="button" aria-pressed="false">Pause animation</button>
+      <button class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+    </div>
+  </header>
+
+  <div class="wrap case">
+    <nav class="case-nav" aria-label="Case study sections">
+      <ol>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#technical">Tech stack</a></li>
+      </ol>
+    </nav>
+
+    <main id="main">
+      <div class="page-head">
+        <p class="label">AI-Based Reccomendation System Project / Spring 2026</p>
+        <h1>Movie Tinder</h1>
+      </div>
+
+      <section id="overview">
+        <h2>Overview</h2>
+        <dl class="overview">
+          <dt>Problem</dt>
+          <dd>Picking a movie takes a long time, and browsing long lists does not tell you what you will actually enjoy.</dd>
+          <dt>Who it affects</dt>
+          <dd>Anyone who wants a quick movie suggestion that fits their taste.</dd>
+          <dt>My role</dt>
+          <dd>Fullstack Developer (Initial UI, APIs, Data Layer, Server)</dd>
+          <dt>Team</dt>
+          <dd>Jade Collins (Filtering System), Hailey Hudson (Fullstack), Flora Saenz (TensorFlow), Genesis Valenzo (Frontend Developer)</dd>
+          <dt>Timeline</dt>
+          <dd>Jan to May 2026.</dd>
+        </dl>
+      </section>
+
+      <section id="demo">
+        <h2>Demo</h2>
+        <video controls preload="metadata" width="100%">
+          <source src="../assets/Demo/MTDemo.mp4" type="video/mp4">
+        </video>
+      </section>
+
+      <section id="architecture">
+        <h2>Architecture</h2>
+        <h3>The swipe loop</h3>
+        <p>The user drags a movie card right to like it or left to skip it. The buttons do the same. Each swipe is saved, and after every like the app asks its recommender for more movies based on everything the user has liked so far. Movies already swiped are never shown again, and filters for minimum rating and maximum runtime narrow the queue.</p>
+        <h3>Code layout</h3>
+        <p>The React frontend (<code>movierecs</code>) is split into components, hooks and utils. The recommender lives in utils. The backend (<code>server</code>) is a small Express API with two routes: one saves a swipe and one returns the full swipe history, newest first. Swipes are stored in MongoDB.</p>
+        <h3>Key decisions and why</h3>
+        <p>Swipes are saved on the server, so liked movies and history are still there after a reload. Card animation uses Framer Motion, and the recommender runs in the browser with TensorFlow.js, so the backend does not need a machine-learning service.</p>
+      </section>
+
+      <section id="technical" class="tech">
+        <h2>Tech stack</h2>
+        <ul>
+          <li>Frontend: React, Vite, Framer Motion</li>
+          <li>Recommendations: TensorFlow.js</li>
+          <li>Backend: Node.js 18+, Express</li>
+          <li>Database: MongoDB with Mongoose</li>
+        </ul>
+        <p><a href="https://github.com/hhutso/MovieTinder" target="_blank">View the code on GitHub</a></p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav aria-labelledby="f-sections">
+          <h2 id="f-sections">Sections</h2>
+          <ul>
+            <li><a href="../work.html">Work</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../resume.html">Resume</a></li>
+            <li><a href="../interests.html">Interests</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-projects">
+          <h2 id="f-projects">Projects</h2>
+          <ul>
+            <li><a href="storyweave.html">StoryWeave</a></li>
+            <li><a href="wateroptix.html">WaterOptix</a></li>
+            <li><a href="voicereminders.html">Voice Reminders</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-connect">
+          <h2 id="f-connect">Connect</h2>
+          <ul>
+            <li><a href="https://github.com/hhutso" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/hailey-hudson2025" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:haileyhudsonn@hotmail.com">Email</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-base">
+        <p class="label">Currently: New Mexico</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

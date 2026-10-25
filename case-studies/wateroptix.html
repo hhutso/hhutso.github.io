@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WaterOptix | Hailey Hudson</title>
+  <meta name="description" content="A decision-support tool that helps Rio Grande Basin farmers find the lowest-cost way to adapt to water shortages.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="WaterOptix | Hailey Hudson">
+  <meta property="og:description" content="A decision-support tool that helps Rio Grande Basin farmers find the lowest-cost way to adapt to water shortages.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/main.js"></script>
+  <script type="module" src="https://www.ascii-magic.com/ascii/ascii.js"></script>
+</head>
+<body>
+  <div class="scene" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="../index.html">Hailey Hudson</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../research.html">Research</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../resume.html">Resume</a></li>
+          <li><a href="../interests.html">Interests</a></li>
+        </ul>
+      </nav>
+      <button class="wave-toggle" type="button" aria-pressed="false">Pause animation</button>
+      <button class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+    </div>
+  </header>
+
+  <div class="wrap case">
+    <nav class="case-nav" aria-label="Case study sections">
+      <ol>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#hackathon">Hackathon</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#status">Status</a></li>
+        <li><a href="#technical">Tech stack</a></li>
+      </ol>
+    </nav>
+
+    <main id="main">
+      <div class="page-head">
+        <p class="label">Desert Dev Lab Hackathon / April 2026</p>
+        <h1>WaterOptix</h1>
+      </div>
+
+<!-- TODO: Research, Quality results and the demo are still placeholders. The repo has no data for them. -->
+      <section id="overview">
+        <h2>Overview</h2>
+        <dl class="overview">
+          <dt>Problem</dt>
+          <dd>During a drought, farmers must decide whether to fallow land or buy water, which crops to prioritize, and whether to trade, with little analytical support.</dd>
+          <dt>Who it affects</dt>
+          <dd>Farmers and water managers in the Rio Grande Basin (EBID and MRGCD irrigation districts).</dd>
+          <dt>My role</dt>
+          <dd>Frontend developer.</dd>
+          <dt>Team</dt>
+          <dd>Hailey Hudson (Frontend), Shokhina Jalilova (Backend and Data), Allison Barricklow (Product Management)</dd>
+          <dt>Timeline</dt>
+          <dd>Two-day hackathon, April 18 to 19, 2026.</dd>
+        </dl>
+      </section>
+
+      <section id="hackathon">
+        <h2>Hackathon</h2>
+        <p>We built WaterOptix at the Desert Dev Lab Hackathon, which was the largest hackathon in New Mexico, on April 18 to 19, 2026, and placed 2nd out of 27 teams. Below are some articles about the event and my patricipation.</p>
+        <p><a href="https://newsroom.nmsu.edu/news/nmsu-students-take-first-and-second-place-at-statewide-desert-dev-lab-hackathon/s/41256a2b-6f2f-412e-aa90-e3e31edbe3c8" target="_blank">NMSU Students Take First and Second Place at Statewide Desert Dev Lab Hackathon</a></p>
+        <p><a href="https://www.lascrucesbulletin.com/stories/built-in-36-hours,168326" target="_blank">Built in 36 Hours: NMSU students turn pressure into statewide wins at AI Hackathon</a></p>
+      </section>
+
+      <section id="demo">
+        <h2>Demo</h2>
+        <video controls preload="metadata" width="100%">
+          <source src="../assets/Demo/WODemo.mp4" type="video/mp4">
+        </video>
+      </section>
+
+      <section id="architecture">
+        <h2>Architecture</h2>
+        <h3>The decision flow</h3>
+        <p>A farmer enters an irrigation district, an expected shortage level, water trading access and a crop portfolio. The tool returns ranked adaptation strategies by income preserved, crop-by-crop acreage adjustments, an income comparison across trading institutions, and a plain-English buy vs. fallow recommendation based on shadow prices.</p>
+        <h3>Code layout</h3>
+        <p>A React frontend (components, pages and services) talks to a FastAPI backend (data, models and services). I built the frontend.</p>
+        <h3>Key decisions and why</h3>
+        <p>The model comes from published research (Ward, 2025), which uses Positive Mathematical Programming to simulate water trading under drought using 2017 to 2021 data. The backend serves that paper's scenario tables, so the numbers trace back to a source. The buy vs. fallow advice is written in plain English so farmers do not need to read shadow prices.</p>
+      </section>
+
+      <section id="status">
+        <h2>Status</h2>
+        <p>WaterOptix is a hackathon prototype built on scenario tables from one paper, covering the EBID and MRGCD districts only.</p>
+      </section>
+
+      <section id="technical" class="tech">
+        <h2>Tech stack</h2>
+        <ul>
+          <li>Frontend: React, Vite, Tailwind CSS, Recharts</li>
+          <li>Backend: Python 3.11, FastAPI</li>
+          <li>Data: Ward et al. 2025 scenario tables</li>
+        </ul>
+        <p><a href="https://github.com/abarricklow/DevLabHackathon" target="_blank">View the code on GitHub</a></p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav aria-labelledby="f-sections">
+          <h2 id="f-sections">Sections</h2>
+          <ul>
+            <li><a href="../work.html">Work</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../resume.html">Resume</a></li>
+            <li><a href="../interests.html">Interests</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-projects">
+          <h2 id="f-projects">Projects</h2>
+          <ul>
+            <li><a href="storyweave.html">StoryWeave</a></li>
+            <li><a href="wateroptix.html">WaterOptix</a></li>
+            <li><a href="voicereminders.html">Voice Reminders</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-connect">
+          <h2 id="f-connect">Connect</h2>
+          <ul>
+            <li><a href="https://github.com/hhutso" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/hailey-hudson2025" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:haileyhudsonn@hotmail.com">Email</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-base">
+        <p class="label">Currently: New Mexico</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
