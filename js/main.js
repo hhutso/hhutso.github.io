@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("https://github-contributions-api.jogruber.de/v4/hhutso?y=last")
       .then((res) => res.json())
       .then((data) => {
-        const days = data.contributions.slice(-182); // 26 weeks x 7 days
+        const days = data.contributions.slice(-365); // 26 weeks x 7 days
         const grid = contrib.querySelector(".contrib");
         // Start the first column on a Sunday by leaving empty cells before the first day
         const pad = new Date(days[0].date + "T00:00:00").getDay();
